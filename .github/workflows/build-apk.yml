@@ -27,24 +27,12 @@ jobs:
 
       - name: Build Debug APK
         run: |
-          if [ -f "pubspec.yaml" ]; then
-            flutter pub get
-            flutter build apk --debug
-          elif [ -f "app/pubspec.yaml" ]; then
-            cd app
-            flutter pub get
-            flutter build apk --debug
-          elif [ -f "flutter_reference/pubspec.yaml" ]; then
-            cd flutter_reference
-            flutter pub get
-            flutter build apk --debug
-          else
-            echo "pubspec.yaml not found!"
-            exit 1
-          fi
+          cd app
+          flutter pub get
+          flutter build apk --debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: '**/build/app/outputs/flutter-apk/app-debug.apk'
+          path: app/build/app/outputs/flutter-apk/app-debug.apk
