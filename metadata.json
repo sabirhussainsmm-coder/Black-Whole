@@ -1,0 +1,7 @@
+{
+  "name": "BlackHole",
+  "description": "Clean, modern cross-platform media downloader inspired by BlackHole with clipboard auto-detect, multi-format extraction, and download management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
