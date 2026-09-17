@@ -27,9 +27,7 @@ jobs:
 
       - name: Build Debug APK
         run: |
-          FLUTTER_DIR=$(find . -maxdepth 2 -name "pubspec.yaml" -exec dirname {} \;)
-          echo "Found Flutter project at: $FLUTTER_DIR"
-          cd "$FLUTTER_DIR"
+          cd app
           flutter pub get
           flutter build apk --debug
 
@@ -37,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: '**/build/app/outputs/flutter-apk/app-debug.apk'
+          path: app/build/app/outputs/flutter-apk/app-debug.apk
